@@ -29,7 +29,40 @@ function increment() {
 
 ```
 
-create a variable to store the changes and display.
+Let's create a variable to store the changes and display on the page.
+
+ 
+
+## save event
+
+```js
+// 1. Grab the save-el paragrah and store it in a variable called saveEl
+let saveEl = document.getElementById('save-el')
+
+function save() {
+    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+  let countStr = count + '-'
+  
+    // 3. Render the variable in the saveEl using innerText
+	saveEl.innnerText += countStr
+  
+}
+```
+
+ 
+
+## reset event
+
+```js
+function save() {
+  let countStr = count + '-'
+  saveEl.innnerText += countStr
+  
+  // set count to 0
+  countEl.innerText = 0
+  count = 0
+}
+```
 
 
 
