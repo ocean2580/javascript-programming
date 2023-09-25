@@ -1,15 +1,16 @@
-const inputBtn = document.getElementById('input-btn');
 let myLeads = [];
+// object
+const inputBtn = document.getElementById('input-btn');
 const inputEl = document.getElementById('input-el');
 const ulEl = document.getElementById('ul-el');
-const deleteBtn = document.getElementById('delete-btn'); 
+const deleteBtn = document.getElementById('delete-btn');
+const tabBtn = document.getElementById('tab-btn');
+const tabs = [];
+// from localStorage
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'));
 
-const tabBtn = document.getElementById('tab-btn');
 
-const tabs = [];
-
-
+// not null
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
   renderLeads(myLeads);
@@ -24,6 +25,7 @@ tabBtn.addEventListener('click',()=>{
 });
 
 deleteBtn.addEventListener('dblclick',()=>{
+  // clear
   localStorage.clear();
   myLeads = [];
   renderLeads(myLeads);
@@ -37,6 +39,7 @@ inputBtn.addEventListener('click',()=>{
   inputEl.value = '';
   renderLeads(myLeads);
 })
+
 
 function renderLeads(leads) {
   let listItems = '';
